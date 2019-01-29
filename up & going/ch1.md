@@ -375,9 +375,7 @@ Either way, you'll note that `amount` holds a running value that changes over th
 
 In other words, *state* is tracking the changes to values as your program runs.
 
-_bookmark_
-
-Another common usage of variables is for centralizing value setting. This is more typically called *constants*, when you declare a variable with a value and intend for that value to *not change* throughout the program.
+**Another common usage of variables is for centralizing value setting. This is more typically called *constants* ,** when you declare a variable with a value and intend for that value to *not change* throughout the program.
 
 You declare these *constants*, often at the top of a program, so that it's convenient for you to have one place to go to alter a value if you need to. By convention, JavaScript variables as constants are usually capitalized, with underscores `_` between multiple words.
 
@@ -416,6 +414,8 @@ Constants are useful just like variables with unchanged values, except that cons
 By the way, that kind of "protection" against mistakes is similar to the static-typing type enforcement, so you can see why static types in other languages can be attractive!
 
 **Note:** For more information about how different values in variables can be used in your programs, see the *Types & Grammar* title of this series.
+
+-------------------------------_Bookmark_------------------------------------
 
 ## Blocks
 
