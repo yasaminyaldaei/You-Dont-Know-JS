@@ -571,7 +571,6 @@ If you turn on strict mode in your code, and you get errors, or code starts beha
 Not only will strict mode keep your code to **a safer path**, and not only will it make your code **more optimizable**, but it also **represents the future direction of the language**. It'd be easier on you to get used to strict mode now than to keep putting it off -- it'll only get harder to convert later!
 
 **Note:** For more information about strict mode, see the Chapter 5 of the *Types & Grammar* title of this series.
-***
 
 ## Functions As Values
 
@@ -583,9 +582,9 @@ function foo() {
 }
 ```
 
-Though it may not seem obvious from that syntax, `foo` is basically just a variable in the outer enclosing scope that's given a reference to the `function` being declared. That is, the `function` itself is a value, just like `42` or `[1,2,3]` would be.
+Though it may not seem obvious from that syntax, `foo` is basically just a variable in the outer enclosing scope that's given a reference to the `function` being declared. That is, **the `function` itself is a value**, just like `42` or `[1,2,3]` would be.
 
-This may sound like a strange concept at first, so take a moment to ponder it. Not only can you pass a value (argument) *to* a function, but *a function itself can be a value* that's assigned to variables, or passed to or returned from other functions.
+This may sound like a strange concept at first, so take a moment to ponder it. Not only can you pass a value (argument) *to* a function, but **a function itself can be a value* that's assigned to variables, or passed to or returned from other functions.**
 
 As such, a function value should be thought of as an expression, much like any other value or expression.
 
@@ -601,7 +600,7 @@ var x = function bar(){
 };
 ```
 
-The first function expression assigned to the `foo` variable is called *anonymous* because it has no `name`.
+The first function expression assigned to the `foo` variable is **called *anonymous* because it has no `name`.**
 
 The second function expression is *named* (`bar`), even as a reference to it is also assigned to the `x` variable. *Named function expressions* are generally more preferable, though *anonymous function expressions* are still extremely common.
 
