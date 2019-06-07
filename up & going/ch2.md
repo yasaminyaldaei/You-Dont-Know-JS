@@ -328,15 +328,13 @@ The `==` comparison fails for a different reason. `a == b` could fail if it's in
 
 **Note:** For more information about the inequality comparison rules, see section 11.8.5 of the ES5 specification and also consult Chapter 4 of the *Types & Grammar* title of this series.
 
-***
-
 ## Variables
 
 In JavaScript, variable names (including function names) must be valid *identifiers*. The strict and complete rules for valid characters in identifiers are a little complex when you consider nontraditional characters such as Unicode. If you only consider typical ASCII alphanumeric characters though, the rules are simple.
 
 An identifier must start with `a`-`z`, `A`-`Z`, `$`, or `_`. It can then contain any of those characters plus the numerals `0`-`9`.
 
-Generally, the same rules apply to a property name as to a variable identifier. However, certain words cannot be used as variables, but are OK as property names. These words are called "reserved words," and include the JS keywords (`for`, `in`, `if`, etc.) as well as `null`, `true`, and `false`.
+Generally, the same rules apply to a property name as to a variable identifier. However, **certain words cannot be used as variables, but are OK as property names. These words are called "reserved words," and include the JS keywords (`for`, `in`, `if`, etc.) as well as `null`, `true`, and `false`.**
 
 **Note:** For more information about reserved words, see Appendix A of the *Types & Grammar* title of this series.
 
@@ -346,9 +344,9 @@ You use the `var` keyword to declare a variable that will belong to the current 
 
 #### Hoisting
 
-Wherever a `var` appears inside a scope, that declaration is taken to belong to the entire scope and accessible everywhere throughout.
+**Wherever a `var` appears inside a scope, that declaration is taken to belong to the entire scope and accessible everywhere throughout.
 
-Metaphorically, this behavior is called *hoisting*, when a `var` declaration is conceptually "moved" to the top of its enclosing scope. Technically, this process is more accurately explained by how code is compiled, but we can skip over those details for now.
+**Metaphorically, this behavior is called *hoisting*, when a `var` declaration is conceptually "moved" to the top of its enclosing scope.** Technically, this process is more accurately explained by how code is compiled, but we can skip over those details for now.
 
 Consider:
 
@@ -370,11 +368,11 @@ function foo() {
 console.log( a );	// 2
 ```
 
-**Warning:** It's not common or a good idea to rely on variable *hoisting* to use a variable earlier in its scope than its `var` declaration appears; it can be quite confusing. It's much more common and accepted to use *hoisted* function declarations, as we do with the `foo()` call appearing before its formal declaration.
+**Warning:** It's not common or a good idea to rely on variable *hoisting* to use a variable earlier in its scope than its `var` declaration appears; it can be quite confusing. **It's much more common and accepted to use *hoisted* function declarations**, as we do with the `foo()` call appearing before its formal declaration.
 
 #### Nested Scopes
 
-When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes. For example:
+**When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.** For example:
 
 ```js
 function foo() {
@@ -402,7 +400,7 @@ foo();
 
 Notice that `c` is not available inside of `bar()`, because it's declared only inside the inner `baz()` scope, and that `b` is not available to `foo()` for the same reason.
 
-If you try to access a variable's value in a scope where it's not available, you'll get a `ReferenceError` thrown. If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode"). Let's take a look:
+**If you try to access a variable's value in a scope where it's not available, you'll get a `ReferenceError` thrown. If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode").** Let's take a look:
 
 ```js
 function foo() {
@@ -415,7 +413,7 @@ a;			// 1 -- oops, auto global variable :(
 
 This is a very bad practice. Don't do it! Always formally declare your variables.
 
-In addition to creating declarations for variables at the function level, ES6 *lets* you declare variables to belong to individual blocks (pairs of `{ .. }`), using the `let` keyword. Besides some nuanced details, the scoping rules will behave roughly the same as we just saw with functions:
+In addition to creating declarations for variables at the function level, **ES6 *lets* you declare variables to belong to individual blocks (pairs of `{ .. }`), using the `let` keyword.** Besides some nuanced details, the scoping rules will behave roughly the same as we just saw with functions:
 
 ```js
 function foo() {
@@ -523,9 +521,9 @@ The conditional operator doesn't have to be used in an assignment, but that's de
 
 ## Strict Mode
 
-ES5 added a "strict mode" to the language, which tightens the rules for certain behaviors. Generally, these restrictions are seen as keeping the code to a safer and more appropriate set of guidelines. Also, adhering to strict mode makes your code generally more optimizable by the engine. Strict mode is a big win for code, and you should use it for all your programs.
+**ES5 added a "strict mode" to the language, which tightens the rules for certain behaviors. Generally, these restrictions are seen as keeping the code to a safer and more appropriate set of guidelines. Also, adhering to strict mode makes your code generally more optimizable by the engine. Strict mode is a big win for code, and you should use it for all your programs.
 
-You can opt in to strict mode for an individual function, or an entire file, depending on where you put the strict mode pragma:
+**You can opt in to strict mode for an individual function, or an entire file, depending on where you put the strict mode pragma**:
 
 ```js
 function foo() {
@@ -557,7 +555,7 @@ function foo() {
 // this code is strict mode
 ```
 
-One key difference (improvement!) with strict mode is disallowing the implicit auto-global variable declaration from omitting the `var`:
+**One key difference (improvement!) with strict mode is disallowing the implicit auto-global variable declaration from omitting the `var`:
 
 ```js
 function foo() {
@@ -570,9 +568,10 @@ foo();
 
 If you turn on strict mode in your code, and you get errors, or code starts behaving buggy, your temptation might be to avoid strict mode. But that instinct would be a bad idea to indulge. If strict mode causes issues in your program, almost certainly it's a sign that you have things in your program you should fix.
 
-Not only will strict mode keep your code to a safer path, and not only will it make your code more optimizable, but it also represents the future direction of the language. It'd be easier on you to get used to strict mode now than to keep putting it off -- it'll only get harder to convert later!
+Not only will strict mode keep your code to **a safer path**, and not only will it make your code **more optimizable**, but it also **represents the future direction of the language**. It'd be easier on you to get used to strict mode now than to keep putting it off -- it'll only get harder to convert later!
 
 **Note:** For more information about strict mode, see the Chapter 5 of the *Types & Grammar* title of this series.
+***
 
 ## Functions As Values
 
